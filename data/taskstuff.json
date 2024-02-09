@@ -1,0 +1,419 @@
+{
+  "tasks": [
+    {
+      "name": "Create database of guest authors",
+      "description": "eahtiisth eating the bitch who stole my bag from the bus carriage and drinking the soda in her bag jhkkk jghhf",
+      "list": "Physics",
+      "date": "2024-01-09T15:13:16.239Z",
+      "tags": "",
+      "subtasks": [],
+      "completed": "true",
+      "id": 3
+    },
+    {
+      "name": "Solve the assignment",
+      "description": "Use the manual provided by the lecturer",
+      "list": "Chemistry",
+      "date": "2024-01-30T02:24:55.000Z",
+      "tags": "",
+      "subtasks": [],
+      "completed": "false",
+      "id": 4
+    },
+    {
+      "name": "Print Business Card",
+      "list": "Physics",
+      "description": "I have had to master popular frameworks like React to create better dynamic, interactive user interfaces that deliver exceptional user experience. I have also had to work with languages such as Python and have had to learn technologies such as Git.",
+      "date": "2024-01-09T15:13:29.567Z",
+      "subtasks": [],
+      "completed": "false",
+      "tags": "",
+      "id": "lq05mjtu"
+    },
+    {
+      "name": "Visit the Chemistry Laboratory",
+      "description": "Gain practical experience of the chemical reaction described in the textbook",
+      "date": "2024-01-31T02:26:00.000Z",
+      "subtasks": [],
+      "completed": "false",
+      "tags": "",
+      "id": "lq05slb5",
+      "list": "Chemistry"
+    },
+    {
+      "name": "Submit the Assignment",
+      "description": "Drop the manual on the lecturer's table.",
+      "date": "2024-01-29T02:26:50.698Z",
+      "subtasks": [],
+      "completed": "true",
+      "tags": "",
+      "id": "lq05zd35",
+      "list": "Chemistry"
+    },
+    {
+      "name": "Adopt a Link Tracker Tool",
+      "list": "Maths",
+      "description": "Eating the bitch who stole my bag from the bus carriage and drinking the soda in her bag.",
+      "date": "2024-01-09T15:14:27.440Z",
+      "subtasks": [],
+      "completed": "false",
+      "tags": "",
+      "id": "lq2uqfq7"
+    },
+    {
+      "name": "Read the Software Process note",
+      "description": "Read the three slides and learn the diagrams.",
+      "date": "2023-12-21T07:17:39.370Z",
+      "list": "Physics",
+      "subtasks": [],
+      "completed": "false",
+      "tags": "",
+      "id": "lq2zkxcs"
+    },
+    {
+      "name": "Eat food before chemistry practical",
+      "list": "Chemistry",
+      "description": "Food is not allowed in the laboratory, so try to eat beforehand.",
+      "date": "2024-01-29T02:27:54.085Z",
+      "subtasks": [
+        {
+          "title": "Eat the jungle food first",
+          "completed": false,
+          "id": "lqxvzi63"
+        }
+      ],
+      "completed": "true",
+      "tags": "",
+      "id": "lqxvytwt"
+    },
+    {
+      "name": "jkkkk",
+      "list": "Physics",
+      "description": "jmnmkk",
+      "date": "2024-01-11T16:16:43.000Z",
+      "subtasks": [],
+      "completed": "false",
+      "tags": "",
+      "id": "lr7zh5f9"
+    },
+    {
+      "name": "Check the flies in the glass",
+      "list": "Biology",
+      "description": "Try to monitor the progress of the flies growth to ensure there are no problems. ",
+      "date": "2024-01-11T16:17:23.000Z",
+      "subtasks": [],
+      "completed": "false",
+      "tags": "",
+      "id": "lr7zjbnp"
+    },
+    {
+      "name": "Wash Lab coat",
+      "list": "Chemistry",
+      "description": "Wash the laboratory coat before the next class.",
+      "date": "2024-01-29T02:28:42.741Z",
+      "subtasks": [],
+      "completed": "false",
+      "tags": "",
+      "id": "lrjpm3ch"
+    },
+    {
+      "name": "Clean the laboratory",
+      "list": "Chemistry",
+      "description": "Have to clean the laboratory after the intense practical session in the afternoon.",
+      "date": "2024-01-30T02:29:28.000Z",
+      "subtasks": [],
+      "completed": "true",
+      "tags": "",
+      "id": "lrjpompc"
+    },
+    {
+      "name": "Get Math Textbook from library",
+      "list": "Maths",
+      "description": "Walk to Library after the Sen 301 class",
+      "date": "2024-01-30T02:12:50.000Z",
+      "subtasks": [],
+      "completed": "false",
+      "tags": "",
+      "id": "lryaq1dx"
+    }
+  ],
+  "sticky": [
+    {
+      "name": "Content Strategy",
+      "description": "Would need time to get insights (goals, personals, budget, audits), but after, it would be good to focus on assembling my team (start with SEO specialist, then perhaps an email marketer?). Also need to brainstorm on tooling.",
+      "id": "lpwu9hcv"
+    }
+  ],
+  "lists": [
+    {
+      "name": "Biology",
+      "color": "yellow",
+      "id": "50"
+    },
+    {
+      "name": "Chemistry",
+      "color": "red",
+      "id": "89"
+    },
+    {
+      "name": "Physics",
+      "color": "blue",
+      "id": "100"
+    },
+    {
+      "name": "Maths",
+      "color": "green",
+      "id": "lqf1qcz3"
+    }
+  ],
+  "assignments": [
+    {
+      "title": "eat some food",
+      "list": "Physics",
+      "description": "eat",
+      "date": "2024-01-25T10:16:43.000Z",
+      "completed": "true",
+      "id": "lr676bye",
+      "grade": "50"
+    },
+    {
+      "title": "Fry",
+      "list": "Chemistry",
+      "description": "justin bieber",
+      "date": "2024-01-25T10:16:43.000Z",
+      "completed": "true",
+      "id": "lr6a4iuj",
+      "grade": "98"
+    },
+    {
+      "title": "tryrue",
+      "description": "wjfjld",
+      "date": "2024-01-09T16:14:22.738Z",
+      "completed": "true",
+      "id": "lr6jvsul",
+      "grade": "40",
+      "list": "Physics"
+    },
+    {
+      "title": "Solve quadratic equations",
+      "list": "Maths",
+      "description": "Answer the questions selected in the Math workbook",
+      "date": "2024-01-30T07:22:06.000Z",
+      "completed": "false",
+      "id": "lrylrt9x",
+      "grade": "0"
+    }
+  ],
+  "schedule": [
+    {
+      "day": "Monday",
+      "courses": [
+        {
+          "title": "Physics",
+          "start": "12:00",
+          "end": "13:00",
+          "courseid": "lrflgk03"
+        }
+      ],
+      "id": "mndy",
+      "short": "Mon"
+    },
+    {
+      "day": "Tuesday",
+      "courses": [
+        {
+          "title": "Chemistry",
+          "start": "10:00",
+          "end": "12:00",
+          "courseid": "lrflrseh"
+        },
+        {
+          "title": "Physics",
+          "start": "13:00",
+          "end": "15:00",
+          "courseid": "lrfn5767"
+        },
+        {
+          "title": "Chemistry",
+          "start": "16:00",
+          "end": "18:00",
+          "courseid": "lrjus8l8"
+        }
+      ],
+      "id": "tudy",
+      "short": "Tues"
+    },
+    {
+      "day": "Wednesday",
+      "courses": [
+        {
+          "title": "Chemistry",
+          "start": "10:00",
+          "end": "12:00",
+          "courseid": "lrfm39r0"
+        },
+        {
+          "title": "Biology",
+          "start": "12:00",
+          "end": "15:00",
+          "courseid": "lrjutlzk"
+        }
+      ],
+      "id": "wddy",
+      "short": "Wed"
+    },
+    {
+      "day": "Thursday",
+      "courses": [
+        {
+          "title": "Maths",
+          "start": "12:00",
+          "end": "14:00",
+          "courseid": "lrflt5lw"
+        }
+      ],
+      "id": "trdy",
+      "short": "Thur"
+    },
+    {
+      "day": "Friday",
+      "courses": [
+        {
+          "title": "Physics",
+          "start": "09:00",
+          "end": "12:00",
+          "courseid": "lrflty29"
+        }
+      ],
+      "id": "fidy",
+      "short": "Fri"
+    }
+  ],
+  "studyschedule": [
+    {
+      "day": "Monday",
+      "courses": [
+        {
+          "title": "Physics",
+          "duration": "2",
+          "completed": null,
+          "courseid": "lrflgk03"
+        }
+      ],
+      "id": "mndy",
+      "short": "Mon"
+    },
+    {
+      "day": "Tuesday",
+      "courses": [
+        {
+          "title": "Chemistry",
+          "duration": "2",
+          "completed": null,
+          "courseid": "lrflrseh"
+        },
+        {
+          "title": "Chemistry",
+          "duration": "5",
+          "completed": null,
+          "courseid": "lrfn5767"
+        },
+        {
+          "title": "Maths",
+          "duration": "4",
+          "completed": null,
+          "courseid": "lrjpsapc"
+        }
+      ],
+      "id": "tudy",
+      "short": "Tues"
+    },
+    {
+      "day": "Wednesday",
+      "courses": [
+        {
+          "title": "Chemistry",
+          "duration": "2",
+          "completed": null,
+          "courseid": "lrfm39r0"
+        }
+      ],
+      "id": "wddy",
+      "short": "Wed"
+    },
+    {
+      "day": "Thursday",
+      "courses": [
+        {
+          "title": "Maths",
+          "duration": "2",
+          "completed": null,
+          "courseid": "lrflt5lw"
+        }
+      ],
+      "id": "trdy",
+      "short": "Thur"
+    },
+    {
+      "day": "Friday",
+      "courses": [
+        {
+          "title": "Physics",
+          "duration": "2",
+          "completed": null,
+          "courseid": "lrflty29"
+        }
+      ],
+      "id": "fidy",
+      "short": "Fri"
+    }
+  ],
+  "CGPA": [
+    {
+      "courses": [
+        {
+          "title": "Physics",
+          "grade": "5",
+          "credit": "5",
+          "id": "jkmuo"
+        },
+        {
+          "title": "Chemistry",
+          "grade": "2",
+          "credit": "4",
+          "id": "lro8veod"
+        },
+        {
+          "title": "Biology",
+          "grade": "3",
+          "credit": "3",
+          "id": "lryubyft"
+        }
+      ],
+      "gpa": "3.5",
+      "id": "nmjkl",
+      "qp": 42,
+      "credits": 12
+    },
+    {
+      "courses": [
+        {
+          "title": "Mathematics",
+          "grade": "5",
+          "credit": "4",
+          "id": "lrpiqhtc"
+        },
+        {
+          "title": "Biology",
+          "grade": "4",
+          "credit": "3",
+          "id": "lrpirpik"
+        }
+      ],
+      "gpa": "4.571428571428571",
+      "id": "lrpipyx9",
+      "qp": 32,
+      "credits": 7
+    }
+  ]
+}
