@@ -4,7 +4,7 @@ A simple Task Manager application built with React.js using Vite. This app allow
 
 Table of Contents
 - [Installation]
-- [Usage](#usage)
+- [Usage]
 - [Technologies Used]
 - [Contributing]
 - [Acknowledgements]
