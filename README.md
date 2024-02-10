@@ -44,7 +44,7 @@ Usage
 Once the installation steps are complete, open your browser and navigate to [http://localhost:3000](http://localhost:3000) to access the Task Manager app. add tasks,  delete tasks, edit tasks, mark them as completed, and manage your to-do list effortlessly.
 
 Use the arrow shown in the image to open the form for editing, updating or deleting tasks.
-![Vite + React - Google Chrome 2_10_2024 10_07_15 AM](https://github.com/Petermmuo05/taskmanager/assets/149189826/4fadbabb-801d-4c29-afe3-60ffd9905406)
+![Vite + React - Google Chrome 2_10_2024 10_07_15 AM (2)](https://github.com/Petermmuo05/taskmanager/assets/149189826/16d14480-465a-4aac-a806-4d93ce700491)
 
 Technologies Used
 
