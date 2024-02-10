@@ -7,6 +7,8 @@ import List from "./Pages/List";
 // import Layout from "./Layout";
 import Upcoming from "./Pages/Upcoming";
 import Today from "./Pages/Today";
+import Layout from "./Layout";
+import Homepage from "./Pages/Homepage";
 // import Sticky from "./Pages/Sticky";
 // import List from "./Pages/List";
 // import Dashboard from "./Pages/Dashboard";
@@ -17,27 +19,16 @@ import Today from "./Pages/Today";
 // import Cgpa from "./Pages/Cgpa";
 
 const router = createBrowserRouter([
-  // {
-  //   element: <Layout />,
-  //   children: [
-  //     { path: "/", element: <Homepage /> },
-  //     { path: "/login", element: <Login /> },
-  //   ],
-  // },
+  {
+    element: <Layout />,
+    children: [{ path: "/", element: <Homepage /> }],
+  },
   {
     path: "/app",
-
     element: <Applayout />,
     children: [
       { path: "upcoming", element: <Upcoming />, children: [] },
-    //   { path: "dashboard", element: <Dashboard /> },
-    //   { path: "assignments", element: <Assignment /> },
       { path: "Today", element: <Today /> },
-    //   { path: "sticky", element: <Sticky /> },
-    //   { path: "tasks", element: <Tasks /> },
-    //   { path: "classes", element: <Classes /> },
-    //   { path: "cgpa", element: <Cgpa /> },
-    //   { path: "study", element: <Study /> },
       { path: "list/:name", element: <List /> },
     ],
   },

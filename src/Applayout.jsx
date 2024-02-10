@@ -13,6 +13,7 @@ import {
   setyesterdaystudy,
 } from "./Slices/taskslice";
 import { checkifinweek, checkiftoday } from "./Components/Filtercomponents";
+import { useMediaQuery } from "react-responsive";
 
 function Applayout() {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ function Applayout() {
   const menuopen = useSelector((store) => store.task.menuopen);
   const isLoading = useSelector((store) => store.task.isLoading);
   const task = useSelector((store) => store.task);
-  const cgpa = useSelector((store) => store.task.cgpalist);
+
   console.log(task);
   const lists = task.lists;
   const [listname, setlistname] = useState("");
@@ -76,45 +77,56 @@ function Applayout() {
   const intDateFormat = new Intl.DateTimeFormat("en-ZA", options);
   const Today_date = intDateFormat.format(date); // Tuesday, 22 November 2022
 
-  //the CGPA Stuff
-  const cgpaclone = [...cgpa];
-  let totalproduct = 0;
-  let totalcredits = 0;
-  let previousproduct = 0;
-  let previouscredits = 0;
-  cgpaclone.slice(0, -1).map((semester) => {
-    const { qp, credits } = semester;
-    previousproduct += qp;
-    previouscredits += credits;
-  });
-  cgpaclone.map((semester) => {
-    const { qp, credits } = semester;
-    totalproduct += qp;
-    totalcredits += credits;
-  });
-  const finalcgpa = totalproduct / totalcredits;
-  const previouscgpa = previousproduct / previouscredits;
+  //mediaqueries
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
+  const isMid = useMediaQuery({ query: "(max-width: 660px)" });
+  const isMid2 = useMediaQuery({ query: "(max-width: 823px)" });
+
+  function handlemenuclose() {
+    isMid2 && dispatch(displaymenu(false));
+  }
 
   console.log(isLoading);
   console.log(task);
   return !isLoading ? (
     <div>
-      <div className="absolute flex h-full w-full items-center justify-evenly bg-gray-50">
+      <div
+        className={`absolute flex h-full w-full items-center  justify-evenly bg-gray-50`}
+      >
         {menuopen ? (
-          <div className="sidebar relative flex h-[100%] w-[21%] flex-col gap-6 border bg-white p-3">
+          <div
+            className={`sidebar relative flex h-[100%]   ${isMid2 ? "w-[90%]" : "w-[21%]"} flex-col gap-6 border bg-white p-3`}
+          >
             <div className="flex flex-row items-center justify-between">
-              <span className="text-[21px] font-bold">Menu</span>{" "}
-              <img
-                src="/menu.png"
-                alt="menu"
-                onClick={() => dispatch(displaymenu(false))}
-              />
+              <span className="text-[24px] font-bold">
+                {isMid2 ? "Task Manager" : "Menu"}
+              </span>
+              {isMid2 ? (
+                <div className="flex flex-row items-center gap-3">
+                  <div className="flex flex-col justify-end">
+                    <span className="text-[12px] font-bold">Sarah Collins</span>
+                    <span className="text-[8px]">College Student</span>
+                  </div>
+                  <div className="roundedimg">
+                    <img src="/animeprofile.jpg" />
+                  </div>
+                </div>
+              ) : (
+                <img
+                  src="/menu.png"
+                  alt="menu"
+                  onClick={() => dispatch(displaymenu(false))}
+                />
+              )}
             </div>
             <hr />
 
             <div className="items-left flex w-full flex-col justify-center">
               <h1 className="text-[11px] font-bold">TASKS</h1>
-              <NavLink to="Upcoming">
+              <NavLink to="Upcoming" onClick={() => handlemenuclose()}>
                 <Item
                   type=""
                   first="/doublearrow.png"
@@ -122,7 +134,7 @@ function Applayout() {
                   third={upcominglen}
                 />
               </NavLink>
-              <NavLink to="Today">
+              <NavLink to="Today" onClick={() => handlemenuclose()}>
                 <Item
                   type=""
                   first="/menuimg.png"
@@ -135,7 +147,11 @@ function Applayout() {
             <div className="items-left flex w-full flex-col justify-center">
               <h1 className="text-[11px] font-bold">LISTS</h1>
               {task.lists.map((list) => (
-                <NavLink to={`list/${list.name}`} key={list.id}>
+                <NavLink
+                  to={`list/${list.name}`}
+                  key={list.id}
+                  onClick={() => handlemenuclose()}
+                >
                   <Item
                     type="list"
                     first={list.color}
@@ -195,51 +211,61 @@ function Applayout() {
             )}
           </div>
         ) : (
-          <div className="relative flex h-[95%] w-[5%] flex-col items-center justify-start p-3">
+          <div className="relative flex h-[95%] w-[5%] flex-col items-center justify-start ">
             <img
               src="/menu.png"
               alt="menu"
+              width="25px"
+              height="10px"
               onClick={() => dispatch(displaymenu(true))}
             />
           </div>
         )}
+        {!(menuopen && isMid2) && (
+          <div
+            className={`items-left h-[100%] w-[79%] flex-col ${
+              menuopen ? "w-[76%]" : "w-[90%]"
+            } justify-between rounded-md bg-blue-50`}
+          >
+            <div className="flex h-[7%] w-full flex-row items-center justify-between text-black bg-gray-300 px-6">
+              <span
+                className={`${isMid ? "text-[16px]" : "text-[20px]"} font-bold text-[#034B61]`}
+              >
+                Task Manager
+              </span>
+              <div className="flex flex-row items-center gap-4">
+                {!isMid && (
+                  <>
+                    <div className="flex flex-row items-center gap-2 ">
+                      <div>
+                        <img src="/calendar.png" />
+                      </div>
+                      <span className="text-[13px]">{Today_date}</span>
+                    </div>
+                    <div className="mr-4 flex">
+                      <img src="/notifications.png" />
+                    </div>
+                  </>
+                )}
 
-        <div
-          className={`items-left h-[100%] w-[79%] flex-col ${
-            menuopen ? "w-[76%]" : "w-[90%]"
-          } justify-between rounded-md bg-blue-50`}
-        >
-          <div className="flex h-[7%] w-full flex-row items-center justify-between text-black bg-gray-300 px-6">
-            <span className="text-[28px] font-bold text-[#034B61]">
-              Task Manager
-            </span>
-            <div className="flex flex-row items-center gap-4">
-              <div className="flex flex-row items-center gap-2 ">
-                <div>
-                  <img src="/calendar.png" />
-                </div>
-                <span className="text-[13px]">{Today_date}</span>
-              </div>
-              <div className="mr-4 flex">
-                <img src="/notifications.png" />
-              </div>
-              <div className="flex flex-row items-center gap-3">
-                <div className="flex flex-col justify-end">
-                  <span className="text-[12px] font-bold">Sarah Collins</span>
-                  <span className="text-[8px]">College Student</span>
-                </div>
-                <div className="roundedimg">
-                  <img src="/animeprofile.jpg" />
+                <div className="flex flex-row items-center gap-3">
+                  <div className="flex flex-col justify-end">
+                    <span className="text-[12px] font-bold">Sarah Collins</span>
+                    <span className="text-[8px]">College Student</span>
+                  </div>
+                  <div className="roundedimg">
+                    <img src="/animeprofile.jpg" />
+                  </div>
                 </div>
               </div>
             </div>
+            {!isLoading && (
+              <div className="flex h-[93%] w-full">
+                <Outlet />
+              </div>
+            )}
           </div>
-          {!isLoading && (
-            <div className="flex h-[93%] w-full">
-              <Outlet />
-            </div>
-          )}
-        </div>
+        )}
       </div>
     </div>
   ) : (

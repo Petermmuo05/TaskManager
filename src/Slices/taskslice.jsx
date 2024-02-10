@@ -2,20 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   tasklist: [],
-  stickylist: [],
   selected: null,
   menuopen: true,
   isLoading: true,
   lists: [],
-  assignments: [],
-  schedule: [],
-  studyschedule: [],
-  yesterdaystudy: {},
-  todaystudy: {},
-  studyloader: true,
-  classesloader: true,
-  cgpalist: [],
-  cgpaloader: true,
 };
 const taskSlice = createSlice({
   name: "task",
@@ -37,21 +27,8 @@ const taskSlice = createSlice({
     loaddata(state, action) {
       if (action.payload.type === "tasks") {
         state.tasklist = action.payload.data;
-      } else if (action.payload.type === "sticky") {
-        state.stickylist = action.payload.data;
       } else if (action.payload.type === "lists") {
         state.lists = action.payload.data;
-      } else if (action.payload.type === "assignments") {
-        state.assignments = action.payload.data;
-      } else if (action.payload.type === "schedule") {
-        state.schedule = action.payload.data;
-        state.classesloader = false;
-      } else if (action.payload.type === "studyschedule") {
-        state.studyschedule = action.payload.data;
-        state.studyloader = false;
-      } else if (action.payload.type === "CGPA") {
-        state.cgpalist = action.payload.data;
-        state.cgpaloader = false;
       }
       state.isLoading = false;
     },
@@ -59,14 +36,8 @@ const taskSlice = createSlice({
       if (action.payload.type === "tasks") {
         state.tasklist = [...state.tasklist, action.payload.data];
         state.selected = null;
-      } else if (action.payload.type === "sticky") {
-        state.stickylist = [...state.stickylist, action.payload.data];
       } else if (action.payload.type === "lists") {
         state.lists = [...state.lists, action.payload.data];
-      } else if (action.payload.type === "assignments") {
-        state.assignments = [...state.assignments, action.payload.data];
-      } else if (action.payload.type === "CGPA") {
-        state.cgpalist = [...state.cgpalist, action.payload.data];
       }
       state.isLoading = false;
     },
@@ -78,17 +49,7 @@ const taskSlice = createSlice({
       state.selected = null;
       if (action.payload.type === "tasks") {
         state.tasklist = state.tasklist.filter(
-          (task) => task.id !== action.payload.id,
-        );
-      } else if (action.payload.type === "sticky") {
-        state.stickylist = state.stickylist.filter((sticky) => {
-          console.log(sticky.id, action.payload.id);
-          return sticky.id !== action.payload.id;
-        });
-        console.log(state.stickylist);
-      } else if (action.payload.type === "assignments") {
-        state.assignments = state.assignments.filter(
-          (assignment) => assignment.id !== action.payload.id,
+          (task) => task.id !== action.payload.id
         );
       } else {
         console.log("INVALID TYPE");
@@ -104,28 +65,6 @@ const taskSlice = createSlice({
           return task.id === action.payload.id ? action.payload.data : task;
         });
         state.selected = null;
-      } else if (action.payload.type === "sticky") {
-        state.stickylist = state.stickylist.map((sticky) => {
-          return sticky.id === action.payload.id ? action.payload.data : sticky;
-        });
-      } else if (action.payload.type === "assignments") {
-        state.assignments = state.assignments.map((assignment) => {
-          return assignment.id === action.payload.id
-            ? action.payload.data
-            : assignment;
-        });
-      } else if (action.payload.type === "schedule") {
-        state.schedule = state.schedule.map((item) => {
-          return item.id === action.payload.id ? action.payload.data : item;
-        });
-      } else if (action.payload.type === "studyschedule") {
-        state.studyschedule = state.studyschedule.map((item) => {
-          return item.id === action.payload.id ? action.payload.data : item;
-        });
-      } else if (action.payload.type === "CGPA") {
-        state.cgpalist = state.cgpalist.map((item) => {
-          return item.id === action.payload.id ? action.payload.data : item;
-        });
       }
     },
     settasklist(state, action) {

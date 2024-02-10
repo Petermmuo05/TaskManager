@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital@1&family=Roboto&display=swap");
+body {
+  font-family: "Raleway", sans-serif;
+}
 .roundedimg {
   display: block;
   width: 32px;
@@ -14,4 +19,9 @@
   overflow: hidden;
   border-radius: 50%;
   background-color: aqua;
+}
+@media only screen and (max-width: 660px) {
+  body {
+    background-color: lightblue;
+  }
 }

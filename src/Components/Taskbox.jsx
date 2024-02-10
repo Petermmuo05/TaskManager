@@ -10,6 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import Subtasklayout from "./Subtasklayout";
 import Subtask from "./Subtask";
+import { useMediaQuery } from "react-responsive";
 
 function Taskbox() {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ function Taskbox() {
   const lists = useSelector((store) => store.task.lists);
   const [name, setname] = useState(sname);
   const [description, setdescription] = useState(sdescription);
-  const [list, setlist] = useState(slist||"Maths");
+  const [list, setlist] = useState(slist || "personal");
   const [date, setdate] = useState(new Date());
   const [validdate, setvaliddate] = useState(true);
   const [subtasks, setsubtasks] = useState(ssubtasks);
@@ -114,8 +115,14 @@ function Taskbox() {
       setisaddsubtasks(true);
     }
   }
+
+  const isMid = useMediaQuery({ query: "(max-width: 660px)" });
+  const isMid2 = useMediaQuery({ query: "(max-width: 823px)" });
+
   return (
-    <div className="flex h-full w-[39%] flex-col items-center justify-between rounded-xl bg-gray-100 px-5 py-3">
+    <div
+      className={`flex h-full  ${isMid2 ? "w-[100%]" : "w-[39%]"} flex-col items-center justify-between rounded-xl bg-gray-100 px-5 py-3`}
+    >
       <div className="items-left flex w-full flex-col justify-center gap-2">
         <div className="m-1 flex w-full flex-row items-center justify-between text-xl font-bold">
           <span>Task:</span>

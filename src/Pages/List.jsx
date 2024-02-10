@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import Tasklayout from "../Components/Tasklayout";
 import Taskbox from "../Components/Taskbox";
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 // function List() {
 //     const {name}=useParams()
@@ -21,29 +22,34 @@ function List() {
   const tasksinlist = tasklist.filter((task) => task.list === name);
   const len = tasksinlist.length;
   const [expanded, setexpanded] = useState(null);
+  const isMid = useMediaQuery({ query: "(max-width: 660px)" });
+  const isMid2 = useMediaQuery({ query: "(max-width: 823px)" });
 
   return (
     <>
-      <div
-        className={`items-left flex h-full gap-6  ${
-          selected ? "w-3/5" : "w-full"
-        } flex-col justify-start p-6 `}
-      >
-        <div className="flex w-full flex-row items-center justify-start gap-6 ">
-          <div className="p-0 text-[28px] font-bold">{name}</div>
-          <div className="box-stuff flex items-center justify-center rounded-sm border px-3 text-[26px]">
-            {len}
+      {!(isMid && selected) && (
+        <div
+          className={`items-left flex h-full gap-6  ${
+            selected ? "w-3/5" : "w-full"
+          } flex-col justify-start p-6 `}
+        >
+          <div className="flex w-full flex-row items-center justify-start gap-6 ">
+            <div className="p-0 text-[28px] font-bold">{name}</div>
+            <div className="box-stuff flex items-center justify-center rounded-sm border px-3 text-[26px]">
+              {len}
+            </div>
+          </div>
+          <div className="flex w-full flex-col items-center justify-center rounded-lg p-3 ">
+            <Tasklayout
+              tasklist={tasksinlist}
+              title=""
+              expanded={expanded}
+              setexpanded={setexpanded}
+            />
           </div>
         </div>
-        <div className="flex w-full flex-col items-center justify-center rounded-lg p-3 ">
-          <Tasklayout
-            tasklist={tasksinlist}
-            title=""
-            expanded={expanded}
-            setexpanded={setexpanded}
-          />
-        </div>
-      </div>
+      )}
+
       {selected && <Taskbox />}
     </>
   );
